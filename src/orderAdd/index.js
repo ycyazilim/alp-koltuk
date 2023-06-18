@@ -48,7 +48,7 @@ const App = ({ navigation }) => {
         let newProductData = []
         resp.data.map((item) => {
 
-            console.log(item.item.product_image);
+            console.log(item.item);
             
             newProductData.push(
                 {
@@ -62,7 +62,8 @@ const App = ({ navigation }) => {
         })
 
         setProductModel(newProductData)
-        setProductModelImageBaseUrl(resp.image_link)
+        setProductModelImageBaseUrl(resp.image_link.replace('https://','http://'))
+        // setProductModelImageBaseUrl(resp.image_link)
         console.log(resp.image_link);
         setModalVisible(false)
 
